@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd> 
+             http://www.springframework.org/schema/util
+            http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+            
+            
+           <!--  standalone List -->
+           
+           <util:list list-class="java.util.LinkedList" id="myList">
+           <value>12334</value>
+           <value>4253738</value>
+           <value>836738</value>
+           </util:list>
+           
+           <util:map map-class="java.util.HashMap" id="myMap">
+           <entry key="90" value="Spring"></entry>
+           <entry key="92" value="Java"></entry>
+           </util:map>
+           
+           <util:properties id="myProps">
+           <prop key="URL">jdbc:mysql://localhost:3306</prop>
+           <prop key="Username">root</prop>
+           <prop key="Password">root5003</prop>
+           </util:properties>
+
+<bean class="standalone_collection.standalone.Person" name="person">
+<property name="mobNo" ref="myList"></property>
+<property name="marks" ref="myMap"/>
+<property name="properties" ref="myProps"></property>
+</bean>
+
+</beans>
