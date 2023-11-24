@@ -2,6 +2,7 @@ package spring_hibernate_assi.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,8 @@ public class Student {
 	private String email;
 //	@Value(value = "OBC")
 	private String cast;
+	@Transient
+	private String schoolName;
 
 	public int getId() {
 		return id;
